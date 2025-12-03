@@ -1,0 +1,3618 @@
+{
+	"info": {
+		"_postman_id": "c851cacd-b0ce-4c79-9168-231e8b5397fe",
+		"name": "RB Science API Collection",
+		"description": "Complete API collection for EuryFox e-commerce platform with categories, products, blog categories, and blogs management including image upload functionality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33864157"
+	},
+	"item": [
+		{ 
+			"name": "Product Categories",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Health Caredd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nutritious and delicious snack options for a healthy lifestyle",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "Main category image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "icon",
+									"description": "Category icon image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "category",
+									"value": "ddd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-categories/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-categories",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-categories/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-categories",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-categories/getById/68af2ff51e795bfe4fb479ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-categories",
+								"getById",
+								"68af2ff51e795bfe4fb479ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Deepak POrwaldd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Premium quality nutritious snacks for health-conscious consumers",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "Optional: New category image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Downloads/1743069323744.jpeg"
+								},
+								{
+									"key": "icon",
+									"description": "Optional: New category icon",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Downloads/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "id",
+									"value": "68af3e133d886d05ac8ef977",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-categories/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-categories",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-categories/68afeee58f6465ac36ed994d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-categories",
+								"68afeee58f6465ac36ed994d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Deepak",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000.4",
+									"type": "text"
+								},
+								{
+									"key": "originalPrice",
+									"value": "15.99",
+									"type": "text"
+								},
+								{
+									"key": "unitId",
+									"value": "68b01e1553ed4ac90c5295e1",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "68b1a0e9d49a718e1ceec4aa",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "reviews",
+									"value": "128",
+									"type": "text"
+								},
+								{
+									"key": "inStock",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "stockCount",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Premium organic almonds, rich in protein and healthy fats",
+									"type": "text"
+								},
+								{
+									"key": "longDescription",
+									"value": "Our organic almonds are sourced from the finest farms and are packed with essential nutrients. They make a perfect snack for any time of the day and are great for maintaining a healthy lifestyle.",
+									"type": "text"
+								},
+								{
+									"key": "features[0]",
+									"value": "100% Organic",
+									"type": "text"
+								},
+								{
+									"key": "features[1]",
+									"value": "Rich in Protein",
+									"type": "text"
+								},
+								{
+									"key": "features[2]",
+									"value": "No Added Preservatives",
+									"type": "text"
+								},
+								{
+									"key": "features[3]",
+									"value": "Gluten Free",
+									"type": "text"
+								},
+								{
+									"key": "specifications[weight]",
+									"value": "250g",
+									"type": "text"
+								},
+								{
+									"key": "specifications[origin]",
+									"value": "California",
+									"type": "text"
+								},
+								{
+									"key": "specifications[shelfLife]",
+									"value": "12 months",
+									"type": "text"
+								},
+								{
+									"key": "specifications[storage]",
+									"value": "Cool, dry place",
+									"type": "text"
+								},
+								{
+									"key": "benefits[0]",
+									"value": "Heart Healthy",
+									"type": "text"
+								},
+								{
+									"key": "benefits[1]",
+									"value": "Good Source of Vitamin E",
+									"type": "text"
+								},
+								{
+									"key": "benefits[2]",
+									"value": "Supports Weight Management",
+									"type": "text"
+								},
+								{
+									"key": "benefits[3]",
+									"value": "Boosts Brain Function",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg",
+										"/C:/Users/Lenovo/Videos/Captures/1742909166051.jpeg",
+										"/C:/Users/Lenovo/Videos/Captures/1743069323744.jpeg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Neha Cool",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "originalPrice",
+									"value": "15.99",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unitId",
+									"value": "68af4958a39c8f001eeec4aa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "68af3e1b3d886d05ac8ef97a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "currencyId",
+									"value": "{{currencyId}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "4.1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "reviews",
+									"value": "128",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "inStock",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stockCount",
+									"value": "50",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount",
+									"value": "20%",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Premium organic almonds, rich in protein and healthy fats",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "longDescription",
+									"value": "Our organic almonds are sourced from the finest farms and are packed with essential nutrients. They make a perfect snack for any time of the day and are great for maintaining a healthy lifestyle.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[0]",
+									"value": "100% Organic",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[1]",
+									"value": "Rich in Protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[2]",
+									"value": "No Added Preservatives",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[3]",
+									"value": "Gluten Free",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[weight]",
+									"value": "250g",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[origin]",
+									"value": "California",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[shelfLife]",
+									"value": "12 months",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[storage]",
+									"value": "Cool, dry place",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[0]",
+									"value": "Heart Healthy",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[1]",
+									"value": "Good Source of Vitamin E",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[2]",
+									"value": "Supports Weight Management",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[3]",
+									"value": "Boosts Brain Function",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "68b5369c1aebcac9a7cd561b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Product Images",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "id",
+									"value": "68afc87a6fa88800ce1c4ba6",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Neha Cool",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/addImages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"addImages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by ID (Full Details)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/getById/68afc87a6fa88800ce1c4ba6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"getById",
+								"68afc87a6fa88800ce1c4ba6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ByCategory Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/getByCategory/68af3e1b3d886d05ac8ef97a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"getByCategory",
+								"68af3e1b3d886d05ac8ef97a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/68afc87a6fa88800ce1c4ba6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"68afc87a6fa88800ce1c4ba6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products with category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/products/getAllProductsWithCategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"products",
+								"getAllProductsWithCategories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog Categories",
+			"item": [
+				{
+					"name": "add Blogs Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Importance of today\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blog Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"68b12142b91796175a3757f6\",\r\n    \"name\":\"Importance of today\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Blogs CategoryBy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/getById/68b12142b91796175a3757f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"getById",
+								"68b12142b91796175a3757f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Blog Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/getAllCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"getAllCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs-category/68b401e12451473fef5bacd1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs-category",
+								"68b401e12451473fef5bacd1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "add Blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daily Newsss",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "10 Healthy Snacking Tips for Better Nutrition",
+									"type": "text"
+								},
+								{
+									"key": "excerpt",
+									"value": "Discover simple yet effective tips to make your snacking habits healthier and more nutritious.",
+									"type": "text"
+								},
+								{
+									"key": "content[0][heading]",
+									"value": "Introduction to Cybersecurity",
+									"description": "in array form of heading and para",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Dr. Sarah Johnson",
+									"type": "text"
+								},
+								{
+									"key": "authorRole",
+									"value": "Nutritionist",
+									"type": "text"
+								},
+								{
+									"key": "readTime",
+									"value": "8 min read",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "68b12142b91796175a3757f6",
+									"type": "text"
+								},
+								{
+									"key": "tags[0]",
+									"value": "nutrition",
+									"type": "text"
+								},
+								{
+									"key": "views",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "likes",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "authorImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg"
+								},
+								{
+									"key": "content[0][para]",
+									"value": "Cybersecurity is essential for protecting sensitive information and systems from threats.",
+									"type": "text"
+								},
+								{
+									"key": "tags[1]",
+									"value": "\"healthy eating",
+									"type": "text"
+								},
+								{
+									"key": "tags[2]",
+									"value": "snacks wellness",
+									"type": "text"
+								},
+								{
+									"key": "content[1][heading]",
+									"value": "Ujjain News ",
+									"type": "text"
+								},
+								{
+									"key": "content[1][para]",
+									"value": "Ujjain is the city of Gods",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blogs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kunall",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Mohit",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "excerpt",
+									"value": "Discover simple yet effective tips to make your snacking habits healthier and more nutritious.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content[0][heading]",
+									"value": "Introduction to Cybersecurity",
+									"description": "in array form of heading and para",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "Dr. Sarah Johnson",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "authorRole",
+									"value": "Nutritionist",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "readTime",
+									"value": "8 min read",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "68b12164b91796175a3757fa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[0]",
+									"value": "nutrition",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "views",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "likes",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comments",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "featured",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png",
+									"disabled": true
+								},
+								{
+									"key": "authorImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "content[0][para]",
+									"value": "Cybersecurity is essential for protecting sensitive information and systems from threats.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[1]",
+									"value": "\"healthy eating",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[2]",
+									"value": "snacks wellness",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "68b40dd6c4f9ddd5feeec4b4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blog By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getById/68b31ebfea08b8ef8f130a66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getById",
+								"68b31ebfea08b8ef8f130a66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blog By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getByName/benefits-of-regular-exercise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getByName",
+								"benefits-of-regular-exercise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getFeatured",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getFeatured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getAllActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getAllActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/getByCategory/68b12164b91796175a3757fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"getByCategory",
+								"68b12164b91796175a3757fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/blogs/68b31e9eea08b8ef8f130a5e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"blogs",
+								"68b31e9eea08b8ef8f130a5e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Info",
+			"item": [
+				{
+					"name": "add contact Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobileNumber\": \"9109611141\",\n  \"infoEmail\": \"info@company.com\",\n  \"salesEmail\": \"sales@company.com\",\n  \"supportEmail\": \"support@company.com\",\n  \"officeAddress\": [\n    \"123 Business Street\",\n    \"Suite 456\",\n    \"New York, NY 10001\",\n    \"United States\"\n  ],\n  \"phoneNumbers\": [\n    \"+1-555-0123\",\n    \"+1-555-0124\",\n    \"+1-800-34333\"\n  ],\n  \"emails\": [\n    \"info@company.com\",\n    \"sales@company.com\",\n    \"support@company.com\",\n    \"admin@company.com\"\n  ],\n  \"businessHours\": [\n    \"Monday: 9:00 AM - 6:00 PM\",\n    \"Tuesday: 9:00 AM - 6:00 PM\",\n    \"Wednesday: 9:00 AM - 6:00 PM\",\n    \"Thursday: 9:00 AM - 6:00 PM\",\n    \"Friday: 9:00 AM - 6:00 PM\",\n    \"Saturday: 10:00 AM - 4:00 PM\",\n    \"Sunday: Closed\"\n  ],\n    \"latitude\": 23.232541,\n    \"longitude\": 75.809854,\n  \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"68b51feec367e8b28b284c04\",\n  \"businessHours\": [\n    \"Monday--Friday: 8:00 AM - 7:00 PM\",\n    \"Saturday: 10:00 AM - 5:00 PM\",\n    \"Sunday: 12:00 PM - 4:00 PM\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Contact Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/getActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"getActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contact Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/getById/68afddbe6cb84559a7a22c7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"getById",
+								"68afddbe6cb84559a7a22c7f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact Info",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/contact-info/68afe2ee617b61ecf6dfda7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"contact-info",
+								"68afe2ee617b61ecf6dfda7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team Members",
+			"item": [
+				{
+					"name": "add team members",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('teamMemberId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "John Smith",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CEO & Founder",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John is the visionary behind EuryFox, with over 15 years of experience in the health and wellness industry. He is passionate about making healthy living accessible to everyone.",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "ourExperts",
+									"value": "true",
+									"type": "text",
+									"description": "Set to true if this member is an expert"
+								},
+								{
+									"key": "ourAdvisory",
+									"value": "false",
+									"type": "text",
+									"description": "Set to true if this member is an advisory member (cannot be true if ourExperts is true)"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "68aff2b181d33a7c8ac313da",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mohit",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John is the visionary behind EuryFox, with over 20 years of experience in the health and wellness industry. He is passionate about making healthy living accessible to everyone through innovative products and services.",
+									"type": "text"
+								},
+								{
+									"key": "ourExperts",
+									"value": "false",
+									"type": "text",
+									"description": "Update expert status"
+								},
+								{
+									"key": "ourAdvisory",
+									"value": "true",
+									"type": "text",
+									"description": "Update advisory status"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Team Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Team Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/getActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"getActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team Member by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/getById/68aff2b181d33a7c8ac313da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"getById",
+								"68aff2b181d33a7c8ac313da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team Member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/68aff22e81d33a7c8ac313d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"68aff22e81d33a7c8ac313d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Experts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/experts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"experts",
+								"all"
+							]
+						},
+						"description": "Get all team members marked as experts (both active and inactive)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Experts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/experts/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"experts",
+								"active"
+							]
+						},
+						"description": "Get only active team members marked as experts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expert by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/experts/68aff2b181d33a7c8ac313da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"experts",
+								"68aff2b181d33a7c8ac313da"
+							]
+						},
+						"description": "Get a specific expert by their ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Advisory Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/advisory/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"advisory",
+								"all"
+							]
+						},
+						"description": "Get all team members marked as advisory (both active and inactive)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Advisory Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/advisory/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"advisory",
+								"active"
+							]
+						},
+						"description": "Get only active team members marked as advisory"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advisory Member by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/team-members/advisory/68aff2b181d33a7c8ac313da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"team-members",
+								"advisory",
+								"68aff2b181d33a7c8ac313da"
+							]
+						},
+						"description": "Get a specific advisory member by their ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currencies",
+			"item": [
+				{
+					"name": "add Currency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('currencyId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"name\": \"sddf\",\n  \"flag\": \"4a3\",\n  \"currency\": \"sdfg\",\n  \"rate\": \"1\",\n  \"symbol\": \"$\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/currencies/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"currencies",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Currency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \n            \"name\": \"Indian\",\n            \"flag\": \"IN\",\n            \"currency\": \"INR\",\n            \"rate\": \"1\",\n            \"symbol\": \"₹\",\n            \"id\": \"68b00f57024ee29ca079be72\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/currencies/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"currencies",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/currencies/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"currencies",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Currency by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/currencies/getById/68b00f57024ee29ca079be72",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"currencies",
+								"getById",
+								"68b00f57024ee29ca079be72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Currency",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/currencies/68b00f57024ee29ca079be72",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"currencies",
+								"68b00f57024ee29ca079be72"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Units",
+			"item": [
+				{
+					"name": "add Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('productUnitId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Pieces\",\n  \"code\": \"PC\",\n  \"type\": \"Box\",\n  \"description\": \"Standard unit of mass in the metric system\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-units/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-units",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n                \"name\": \"Pieces\",\n            \"code\": \"PC\",\n            \"type\": \"Box\",\n            \"description\": \"Standard unit of mass in the metric system\",\n            \"id\": \"68b01e1553ed4ac90c5295e1\"\n        }"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-units/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-units",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product Units",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-units/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-units",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Unit by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-units/getById/68b01e7553ed4ac90c5295e5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-units",
+								"getById",
+								"68b01e7553ed4ac90c5295e5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product Unit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/product-units/68b01e7553ed4ac90c5295e5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"product-units",
+								"68b01e7553ed4ac90c5295e5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit Quantities",
+			"item": [
+				{
+					"name": "add Unit quantities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('unitQuantityId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unitId\": \"68b01e1553ed4ac90c5295e5\",\n  \"quantities\": [\n    {\n      \"value\": \"250g\",\n      \"label\": \"250 grams\",\n      \"multiplier\": 0.25\n    },\n    {\n      \"value\": \"500g\",\n      \"label\": \"500 grams\",\n      \"multiplier\": 0.5\n    },\n    {\n      \"value\": \"1kg\",\n      \"label\": \"1 kilogram\",\n      \"multiplier\": 1\n    },\n    {\n      \"value\": \"2kg\",\n      \"label\": \"2 kilograms\",\n      \"multiplier\": 2\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/unit-quantities/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"unit-quantities",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Unit Quantity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"quantities\": [\n            {\n                \"value\": \"250g\",\n                \"label\": \"250 grams\",\n                \"multiplier\": 0.25\n            }\n        ],\n  \"unitId\": \"68b53de1b15c8fc17680d281\",\n        \"id\": \"68b53de1b15c8fc17680d281\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/unit-quantities/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"unit-quantities",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Unit Quantities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/unit-quantities/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"unit-quantities",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/unit-quantities/getbyid/68b02ee94528a46b2de171e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"unit-quantities",
+								"getbyid",
+								"68b02ee94528a46b2de171e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Unit Qunatities",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/unit-quantities/68b02ee94528a46b2de171e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"unit-quantities",
+								"68b02ee94528a46b2de171e8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentications",
+			"item": [
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"temporaryPassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"68b53de1b15c8fc17680d281\",\n  \"name\": \"Updated Admin Name\",\n  \"email\": \"updated@example.com\",\n  \"password\": \"newPassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admin By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/getById/68b53de1b15c8fc17680d281",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"getById",
+								"68b53de1b15c8fc17680d281"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/68b53de1b15c8fc17680d281",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"68b53de1b15c8fc17680d281"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200 && pm.response.json().token) {",
+									"    pm.globals.set('authToken', pm.response.json().token);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    console.log('OTP sent successfully');",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/request-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"request-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    pm.globals.set('verifiedOTP', pm.request.body.raw.otp);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"otp\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"otp\": \"123456\",\n  \"newPassword\": \"newSecurePassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/admin/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"admin",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Add Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "RB Science Foundation Day 2025",
+									"type": "text"
+								},
+								{
+									"key": "subtitle",
+									"value": "How New Drugs Are Discovered",
+									"type": "text"
+								},
+								{
+									"key": "registration_link",
+									"value": "https://rbsfoundation.in/register",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbsconference2025@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "event_type",
+									"value": "Research Conference",
+									"type": "text"
+								},
+								{
+									"key": "abstract_deadline",
+									"value": "2025-08-20",
+									"type": "text"
+								},
+								{
+									"key": "featured_event",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "{\"city\":\"Bhopal\",\"country\":\"India\"}",
+									"description": "JSON format",
+									"type": "text"
+								},
+								{
+									"key": "awards",
+									"value": "[{\"icon\":\"🌟\",\"title\":\"Young Researcher Award\",\"criteria\":\"Age ≤ 30 years\"},{\"icon\":\"💊\",\"title\":\"Drug Delivery Excellence\",\"criteria\":\"Research Innovation\"},{\"icon\":\"🔬\",\"title\":\"Drug Discovery Excellence\",\"criteria\":\"Breakthrough Research\"}]",
+									"description": "JSON array format",
+									"type": "text"
+								},
+								{
+									"key": "registration_fees",
+									"value": "{\"early_bird_deadline\":\"2025-09-01\",\"categories\":[{\"type\":\"UG/PG Students\",\"early_bird\":500,\"regular\":750,\"icon\":\"🎓\"},{\"type\":\"Ph.D. Scholars\",\"early_bird\":1000,\"regular\":1250,\"icon\":\"🔬\"},{\"type\":\"Faculty\",\"early_bird\":1200,\"regular\":1500,\"icon\":\"👨‍🏫\"},{\"type\":\"Industry Personnel\",\"early_bird\":2000,\"regular\":2500,\"icon\":\"💼\"}]}",
+									"description": "JSON object format",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "[{\"time\":\"9:00 AM\",\"activity\":\"Spot Registration\",\"icon\":\"📝\"},{\"time\":\"10:00 AM\",\"activity\":\"Inauguration\",\"icon\":\"🎉\"},{\"time\":\"11:00 AM\",\"activity\":\"Tea Break\",\"icon\":\"☕\"},{\"time\":\"11:30 AM\",\"activity\":\"Keynote Speech\",\"icon\":\"🎤\"},{\"time\":\"1:00 PM\",\"activity\":\"Lunch\",\"icon\":\"🍽️\"}]",
+									"description": "JSON array format",
+									"type": "text"
+								},
+								{
+									"key": "venue",
+									"value": "{\"name\":\"RB Science Research Lab\",\"address\":\"Opp. Irshad Farms, Padariya Sankal, Raisen Road, Bhopal\"}",
+									"description": "JSON object format",
+									"type": "text"
+								},
+								{
+									"key": "payment_details",
+									"value": "{\"phoneNumber\":\"7000882050\",\"bank_account\":{\"account\":\"50380200000315\",\"ifsc\":\"BARB0AYOBHO\",\"bank\":\"Bank of Baroda\",\"branch\":\"Ayodhya Nagar, Bhopal\"}}",
+									"description": "JSON object format",
+									"type": "text"
+								},
+								{
+									"key": "important_dates",
+									"value": "[{\"label\":\"Award Nominations\",\"date\":\"2025-08-20\"},{\"label\":\"Abstract Submission\",\"date\":\"2025-08-25\"},{\"label\":\"Abstract Confirmation\",\"date\":\"2025-09-01\"}]",
+									"description": "JSON array format",
+									"type": "text"
+								},
+								{
+									"key": "guests",
+									"value": "[{\"type\":\"Chief Guest\",\"name\":\"Shri Sanjay Jain\",\"designation\":\"President\",\"organization\":\"MP, PCI\",\"icon\":\"👑\"},{\"type\":\"Keynote Speaker\",\"name\":\"Dr. Amit Joharapurkar\",\"designation\":\"Scientist\",\"organization\":\"Zydus Research Center\",\"icon\":\"🎤\"}]",
+									"description": "JSON array format",
+									"type": "text"
+								},
+								{
+									"key": "about",
+									"value": "{\"description\":\"ISO 9001:2015 certified CRO approved by AICTE, offering industry-based training and pharmaceutical research programs.\",\"tagline\":\"Leader in Training\"}",
+									"description": "JSON object format",
+									"type": "text"
+								},
+								{
+									"key": "brochure",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Documents/event-brochure.pdf",
+									"description": "PDF, JPG, or PNG only"
+								},
+								{
+									"key": "brochure_label",
+									"value": "Download Event Brochure",
+									"type": "text",
+									"description": "Optional label for brochure"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "68b50dd6c4f9ddd5feeec4b4",
+									"type": "text",
+									"description": "Event ID - Required"
+								},
+								{
+									"key": "title",
+									"value": "RB Science Foundation Day 2025 - Updated",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "Innovations in Drug Discovery",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "registration_link",
+									"value": "https://rbsfoundation.in/register-2025",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2025",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "rbsconference2025@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "event_type",
+									"value": "International Conference",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "abstract_deadline",
+									"value": "2025-08-25",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "featured_event",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "{\"city\":\"Bhopal\",\"country\":\"India\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "awards",
+									"value": "[{\"icon\":\"🌟\",\"title\":\"Best Paper Award\",\"criteria\":\"Outstanding Research\"}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "registration_fees",
+									"value": "{\"early_bird_deadline\":\"2025-09-15\",\"categories\":[{\"type\":\"Students\",\"early_bird\":600,\"regular\":800,\"icon\":\"🎓\"}]}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "schedule",
+									"value": "[{\"time\":\"9:00 AM\",\"activity\":\"Registration\",\"icon\":\"📝\"}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "venue",
+									"value": "{\"name\":\"RB Science Lab\",\"address\":\"Bhopal, MP\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "payment_details",
+									"value": "{\"phoneNumber\":\"7000882050\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "important_dates",
+									"value": "[{\"label\":\"Registration Deadline\",\"date\":\"2025-09-01\"}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "guests",
+									"value": "[{\"type\":\"Speaker\",\"name\":\"Dr. John Doe\",\"designation\":\"Professor\",\"organization\":\"MIT\"}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "about",
+									"value": "{\"description\":\"Updated description\",\"tagline\":\"Excellence in Research\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "brochure",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Documents/updated-brochure.pdf",
+									"disabled": true,
+									"description": "PDF, JPG, or PNG only"
+								},
+								{
+									"key": "brochure_label",
+									"value": "Download Updated Brochure",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/getById/68b50dd6c4f9ddd5feeec4b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"getById",
+								"68b50dd6c4f9ddd5feeec4b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/getFeatured",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"getFeatured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/getByYear/2025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"getByYear",
+								"2025"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/rbscience/events/68b50dd6c4f9ddd5feeec4b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"rbscience",
+								"events",
+								"68b50dd6c4f9ddd5feeec4b4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collaborative Projects",
+			"item": [
+				{
+				"name": "Add Collaborative Project",
+				"event": [
+					{
+					"listen": "test",
+					"script": {
+						"exec": [
+						"if (pm.response.code === 201 && pm.response.json().data) {",
+						"    pm.globals.set('collaborativeProjectId', pm.response.json().data._id);",
+						"}"
+						],
+						"type": "text/javascript"
+					}
+					}
+				],
+				"request": {
+					"method": "POST",
+					"header": [],
+					"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+						"key": "title",
+						"value": "Novel Drug Delivery Systems",
+						"type": "text"
+						},
+						{
+						"key": "description",
+						"value": "Development of targeted nanoparticle drug delivery systems for cancer therapeutics",
+						"type": "text"
+						},
+						{
+						"key": "university",
+						"value": "Stanford University",
+						"type": "text"
+						},
+						{
+						"key": "isActive",
+						"value": "true",
+						"type": "text"
+						},
+						{
+						"key": "image",
+						"type": "file",
+						"src": "/C:/Users/YourUsername/Pictures/project-image.jpg"
+						}
+					]
+					},
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/add",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "add"]
+					}
+				},
+				"response": []
+				},
+				{
+				"name": "Update Collaborative Project",
+				"request": {
+					"method": "POST",
+					"header": [],
+					"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+						"key": "id",
+						"value": "{{collaborativeProjectId}}",
+						"type": "text",
+						"description": "Project ID to update"
+						},
+						{
+						"key": "title",
+						"value": "Advanced Drug Delivery Systems",
+						"type": "text"
+						},
+						{
+						"key": "description",
+						"value": "Updated: Development of targeted nanoparticle drug delivery systems for cancer therapeutics with improved efficacy",
+						"type": "text"
+						},
+						{
+						"key": "university",
+						"value": "Stanford University",
+						"type": "text"
+						},
+						{
+						"key": "isActive",
+						"value": "true",
+						"type": "text"
+						},
+						{
+						"key": "image",
+						"type": "file",
+						"src": "/C:/Users/YourUsername/Pictures/updated-project-image.jpg",
+						"description": "Optional: Upload new image"
+						}
+					]
+					},
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/update",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "update"]
+					}
+				},
+				"response": []
+				},
+				{
+				"name": "Get All Collaborative Projects",
+				"request": {
+					"method": "GET",
+					"header": [],
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/getAll",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "getAll"]
+					},
+					"description": "Get all collaborative projects (active and inactive)"
+				},
+				"response": []
+				},
+				{
+				"name": "Get Active Collaborative Projects",
+				"request": {
+					"method": "GET",
+					"header": [],
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/getActive",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "getActive"]
+					},
+					"description": "Get only active collaborative projects"
+				},
+				"response": []
+				},
+				{
+				"name": "Get Collaborative Project by ID",
+				"request": {
+					"method": "GET",
+					"header": [],
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/getById/{{collaborativeProjectId}}",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "getById", "{{collaborativeProjectId}}"]
+					},
+					"description": "Get a specific collaborative project by ID"
+				},
+				"response": []
+				},
+				{
+				"name": "Get Projects by University",
+				"request": {
+					"method": "GET",
+					"header": [],
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/university/Stanford University",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "university", "Stanford University"]
+					},
+					"description": "Get all active projects from a specific university"
+				},
+				"response": []
+				},
+				{
+				"name": "Delete Collaborative Project",
+				"request": {
+					"method": "DELETE",
+					"header": [],
+					"url": {
+					"raw": "http://localhost:4000/rbscience/collaborative-projects/{{collaborativeProjectId}}",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "4000",
+					"path": ["rbscience", "collaborative-projects", "{{collaborativeProjectId}}"]
+					},
+					"description": "Delete a collaborative project by ID"
+				},
+				"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+			{
+			"name": "Add Service",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('serviceId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"title\": \"Financial Advisory\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "add"]
+				}
+			},
+			"response": []
+			},
+			{
+			"name": "Update Service",
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"67890abcdef1234567890abc\",\n  \"title\": \"Financial Advisory Services\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "update"]
+				},
+				"description": "Update an existing service. Replace the ID with actual service ID."
+			},
+			"response": []
+			},
+			{
+			"name": "Get All Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "getAll"]
+				},
+				"description": "Retrieve all services (both active and inactive)"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Active Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "getActive"]
+				},
+				"description": "Retrieve only active services"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Service By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/getById/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "getById", "67890abcdef1234567890abc"]
+				},
+				"description": "Get a specific service by its ID"
+			},
+			"response": []
+			},
+			{
+			"name": "Delete Service",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services", "67890abcdef1234567890abc"]
+				},
+				"description": "Delete a service by ID"
+			},
+			"response": []
+			}
+		]
+		},
+		{
+			"name": "Service Categories",
+			"item": [
+			{
+			"name": "Add Service Category",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('categoryId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"title\": \"Tax Planning\",\n  \"description\": \"Comprehensive tax planning services for individuals and businesses\",\n  \"service_id\": \"67890abcdef1234567890abc\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "add"]
+				},
+				"description": "Add a new service category. Make sure to use a valid service_id from Services collection."
+			},
+			"response": []
+			},
+			{
+			"name": "Update Service Category",
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"67890abcdef1234567890xyz\",\n  \"title\": \"Advanced Tax Planning\",\n  \"description\": \"Expert tax planning and optimization services\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "update"]
+				},
+				"description": "Update an existing service category"
+			},
+			"response": []
+			},
+			{
+			"name": "Get All Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "getAll"]
+				},
+				"description": "Get all service categories (both active and inactive)"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Active Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "getActive"]
+				},
+				"description": "Get only active service categories"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Category By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/getById/67890abcdef1234567890xyz",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "getById", "67890abcdef1234567890xyz"]
+				},
+				"description": "Get a specific category by its ID"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Categories By Service ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/service/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "service", "67890abcdef1234567890abc"]
+				},
+				"description": "Get all categories under a specific service (both active and inactive)"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Active Categories By Service ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/service/67890abcdef1234567890abc/active",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "service", "67890abcdef1234567890abc", "active"]
+				},
+				"description": "Get only active categories under a specific service"
+			},
+			"response": []
+			},
+			{
+			"name": "Delete Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/service-categories/67890abcdef1234567890xyz",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "service-categories", "67890abcdef1234567890xyz"]
+				},
+				"description": "Delete a service category by ID"
+			},
+			"response": []
+			}
+		]
+		},
+		{
+			"name": "Services Details",
+			"item": [
+			{
+			"name": "Add Service Detail",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('detailId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "title",
+					"value": "Personal Tax Filing",
+					"type": "text"
+					},
+					{
+					"key": "description",
+					"value": "Complete personal income tax preparation and filing services with expert guidance",
+					"type": "text"
+					},
+					{
+					"key": "service_category_id",
+					"value": "67890abcdef1234567890xyz",
+					"type": "text",
+					"description": "Category ID from service_categories collection"
+					},
+					{
+					"key": "featured",
+					"value": "[\"Fast Processing\", \"Expert Review\", \"Maximum Refunds\", \"Year-Round Support\"]",
+					"type": "text",
+					"description": "JSON array of featured items"
+					},
+					{
+					"key": "image_url",
+					"type": "file",
+					"src": "/C:/Users/Lenovo/Downloads/tax-filing.jpg",
+					"description": "Upload service detail image"
+					},
+					{
+					"key": "long_description",
+					"value": "[{\"label\":\"What's Included\",\"description\":\"Complete tax form preparation, filing, and support throughout the process\"},{\"label\":\"Benefits\",\"description\":\"Expert guidance to maximize deductions and ensure accuracy\"},{\"label\":\"Process\",\"description\":\"Simple 3-step process: Upload documents, Review with expert, File electronically\"}]",
+					"type": "text",
+					"description": "JSON array of label-description objects"
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "add"]
+				},
+				"description": "Add a new service detail with image upload. Make sure to use a valid service_category_id."
+			},
+			"response": []
+			},
+			{
+			"name": "Update Service Detail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "id",
+					"value": "67890abcdef1234567890pqr",
+					"type": "text"
+					},
+					{
+					"key": "title",
+					"value": "Premium Personal Tax Filing",
+					"type": "text"
+					},
+					{
+					"key": "description",
+					"value": "Comprehensive personal tax services with expert consultation and audit protection",
+					"type": "text"
+					},
+					{
+					"key": "featured",
+					"value": "[\"Priority Processing\", \"Tax Expert Review\", \"Maximum Refunds Guaranteed\", \"Audit Protection\"]",
+					"type": "text"
+					},
+					{
+					"key": "image_url",
+					"type": "file",
+					"src": "/C:/Users/Lenovo/Downloads/tax-filing-premium.jpg",
+					"description": "Upload new image (optional - only if you want to change the image)"
+					},
+					{
+					"key": "long_description",
+					"value": "[{\"label\":\"Premium Features\",\"description\":\"Extended support and audit protection included\"},{\"label\":\"Expert Consultation\",\"description\":\"One-on-one sessions with certified tax experts\"},{\"label\":\"Guarantee\",\"description\":\"100% accuracy guarantee or we cover penalties\"}]",
+					"type": "text"
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "update"]
+				},
+				"description": "Update an existing service detail. Image is optional - only include if changing."
+			},
+			"response": []
+			},
+			{
+			"name": "Get All Service Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "getAll"]
+				},
+				"description": "Get all service details with populated category and service information"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Service Detail By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/getById/67890abcdef1234567890pqr",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "getById", "67890abcdef1234567890pqr"]
+				},
+				"description": "Get a specific service detail by its ID"
+			},
+			"response": []
+			},
+			{
+			"name": "Get Details By Category ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/category/67890abcdef1234567890xyz",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "category", "67890abcdef1234567890xyz"]
+				},
+				"description": "Get all service details under a specific category"
+			},
+			"response": []
+			},
+			{
+			"name": "Delete Service Detail",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/services-details/67890abcdef1234567890pqr",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "services-details", "67890abcdef1234567890pqr"]
+				},
+				"description": "Delete a service detail by ID (also deletes associated image)"
+			},
+			"response": []
+			}
+		]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Set dynamic variables if needed",
+					"// pm.globals.set('timestamp', new Date().toISOString());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Global test scripts",
+					"pm.test('Response time is less than 2000ms', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					"",
+					"pm.test('Response has valid JSON', function () {",
+					"    pm.response.to.have.jsonBody();",
+					"});",
+					"",
+					"// Auto-save IDs for chaining requests",
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    const responseData = pm.response.json().data;",
+					"    if (responseData._id) {",
+					"        if (pm.request.url.path.includes('categories') && !pm.request.url.path.includes('blog-categories')) {",
+					"            pm.globals.set('categoryId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('products')) {",
+					"            pm.globals.set('productId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('blog-categories')) {",
+					"            pm.globals.set('blogCategoryId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('blogs')) {",
+					"            pm.globals.set('blogId', responseData._id);",
+					"        }",
+					"    }",
+					"}"
+				]
+			}
+		}
+	]
+}
