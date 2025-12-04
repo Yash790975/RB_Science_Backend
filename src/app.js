@@ -26,6 +26,12 @@ const servicesRoutes=require('./routes/services.routes');
 const serviceCategoriesRoutes=require('./routes/serviceCategories.routes');
 const servicesDetailsRoutes=require('./routes/servicesDetails.routes');
 
+const trainingProgramsRoutes = require("./routes/trainingPrograms.routes");
+const successStoriesRoutes = require("./routes/successStories.routes");
+const trainingApplicationsRoutes = require("./routes/trainingApplications.routes");
+
+
+
 const app = express();
 
 // Security middleware
@@ -68,15 +74,19 @@ app.use("/rbscience/team-members",teamMembersRoutes)
 // app.use("/rbscience/currencies",currenciesRoutes);
 // app.use("/rbscience/product-units",productUnitsRoutes);
 // app.use("/rbscience/unit-quantities",unitQunatitiesRoutes)
+// app.use("/rbscience/users",usersRoutes);
 app.use("/rbscience/blogs-category",blogsCategoryRoutes);
 app.use("/rbscience/blogs",blogsRoutes);
-// app.use("/rbscience/users",usersRoutes);
 app.use("/rbscience/admin",adminRoutes);
 app.use('/rbscience/events', eventRoutes);
 app.use('/rbscience/collaborative-projects', collaborativeProjectsRoutes);
 app.use('/rbscience/services', servicesRoutes);
 app.use('/rbscience/service-categories', serviceCategoriesRoutes);
 app.use('/rbscience/services-details', servicesDetailsRoutes);
+
+app.use("/rbscience/training-programs", trainingProgramsRoutes);
+app.use("/rbscience/success-stories", successStoriesRoutes);
+app.use("/rbscience/training-applications", trainingApplicationsRoutes);
 
 
 app.use(notFound);

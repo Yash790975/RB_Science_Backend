@@ -33,10 +33,6 @@ db.product_categories.createIndex(
   { unique: true }
 );
 
-
-
-
-
 db.createCollection("products", {
   validator: {
     $jsonSchema: {
@@ -189,9 +185,6 @@ db.createCollection("team_members", {
 
 db.team_members.createIndex({ role: 1 }, { unique: true });
 
- 
-
-
 
 
 db.createCollection("currencies", {
@@ -213,14 +206,6 @@ db.createCollection("currencies", {
 db.currencies.createIndex({ name: 1 }, { unique: true });
 db.currencies.createIndex({ flag: 1 }, { unique: true });
 db.currencies.createIndex({ currency: 1 }, { unique: true });
-
-
-
-
-
-
-
-
 
 
 
@@ -544,10 +529,6 @@ db.runCommand({
 });
 
 
-
-
-
-
 db.createCollection("users", {
   validator: {
     $jsonSchema: {
@@ -575,18 +556,6 @@ db.createCollection("users", {
   }
 });
 db.users.createIndex({ emailAddress: 1 }, { unique: true });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 db.createCollection("events", {
@@ -735,15 +704,6 @@ db.createCollection("events", {
 
 
  
-
-
-
-
-
-
-
-
-
 
 db.events.insertOne({
   title: "RB Science Foundation Day",

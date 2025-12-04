@@ -3569,6 +3569,574 @@
 			"response": []
 			}
 		]
+		},
+		{
+			"name": "Training Programs",
+			"item": [
+			{
+			"name": "Add Training Program",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('trainingProgramId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "title",
+					"value": "Full Stack Web Development Training",
+					"type": "text"
+					},
+					{
+					"key": "screen_name",
+					"value": "full-time",
+					"type": "text",
+					"description": "Either 'internship' or 'full-time'"
+					},
+					{
+					"key": "description",
+					"value": "Comprehensive training program covering modern web development technologies including React, Node.js, MongoDB, and cloud deployment.",
+					"type": "text"
+					},
+					{
+					"key": "weeks",
+					"value": "12 weeks",
+					"type": "text"
+					},
+					{
+					"key": "fees",
+					"value": "₹50000",
+					"type": "text"
+					},
+					{
+					"key": "features",
+					"value": "[\"Live project experience\", \"Industry mentor support\", \"Job placement assistance\", \"Certification upon completion\", \"Flexible learning schedule\"]",
+					"type": "text",
+					"description": "JSON array of features"
+					},
+					{
+					"key": "isActive",
+					"value": "true",
+					"type": "text"
+					},
+					{
+					"key": "image",
+					"type": "file",
+					"src": ""
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "add"]
+				}
+			}
+			},
+			{
+			"name": "Update Training Program",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "id",
+					"value": "{{trainingProgramId}}",
+					"type": "text"
+					},
+					{
+					"key": "title",
+					"value": "Advanced Full Stack Development",
+					"type": "text"
+					},
+					{
+					"key": "fees",
+					"value": "₹55000",
+					"type": "text"
+					},
+					{
+					"key": "features",
+					"value": "[\"Live project experience\", \"Industry mentor support\", \"Job placement assistance\", \"Certification upon completion\", \"Flexible learning schedule\", \"Cloud deployment training\"]",
+					"type": "text"
+					},
+					{
+					"key": "image",
+					"type": "file",
+					"src": ""
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "update"]
+				}
+			}
+			},
+			{
+			"name": "Get All Training Programs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "getAll"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Training Programs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "getActive"]
+				}
+			}
+			},
+			{
+			"name": "Get Training Program by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/getById/{{trainingProgramId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "getById", "{{trainingProgramId}}"]
+				}
+			}
+			},
+			{
+			"name": "Get Programs by Screen Name (Internship)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/screen/internship",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "screen", "internship"]
+				}
+			}
+			},
+			{
+			"name": "Get Programs by Screen Name (Full-Time)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/screen/full-time",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "screen", "full-time"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Programs by Screen Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/screen/internship/active",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "screen", "internship", "active"]
+				}
+			}
+			},
+			{
+			"name": "Delete Training Program",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-programs/{{trainingProgramId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-programs", "{{trainingProgramId}}"]
+				}
+			}
+			}
+		]
+		},
+		{
+			"name": "Success Stories",
+			"item": [
+			{
+			"name": "Add Success Story",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('successStoryId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "name",
+					"value": "Rahul Sharma",
+					"type": "text"
+					},
+					{
+					"key": "position",
+					"value": "Senior Software Engineer at Google",
+					"type": "text"
+					},
+					{
+					"key": "description",
+					"value": "After completing the full-stack development training, I landed my dream job at Google. The hands-on projects and mentor support were invaluable in my journey.",
+					"type": "text"
+					},
+					{
+					"key": "isActive",
+					"value": "true",
+					"type": "text"
+					},
+					{
+					"key": "image",
+					"type": "file",
+					"src": ""
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "add"]
+				}
+			}
+			},
+			{
+			"name": "Update Success Story",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{
+					"key": "id",
+					"value": "{{successStoryId}}",
+					"type": "text"
+					},
+					{
+					"key": "position",
+					"value": "Lead Software Engineer at Google",
+					"type": "text"
+					},
+					{
+					"key": "description",
+					"value": "After completing the full-stack development training, I landed my dream job at Google and recently got promoted to Lead Engineer. The hands-on projects and mentor support were invaluable in my journey.",
+					"type": "text"
+					},
+					{
+					"key": "image",
+					"type": "file",
+					"src": ""
+					}
+				]
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "update"]
+				}
+			}
+			},
+			{
+			"name": "Get All Success Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "getAll"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Success Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "getActive"]
+				}
+			}
+			},
+			{
+			"name": "Get Success Story by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/getById/{{successStoryId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "getById", "{{successStoryId}}"]
+				}
+			}
+			},
+			{
+			"name": "Delete Success Story",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/success-stories/{{successStoryId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "success-stories", "{{successStoryId}}"]
+				}
+			}
+			}
+		]
+		},
+		{
+			"name": "Training Applications",
+			"item": [
+			{
+			"name": "Submit Training Application",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('applicationId', pm.response.json().data._id);",
+					"}"
+					],
+					"type": "text/javascript"
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"fullname\": \"Priya Patel\",\n  \"email\": \"priya.patel@example.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"education_level\": \"Bachelor's in Computer Science\",\n  \"preferred_program_id\": \"{{trainingProgramId}}\",\n  \"reason\": \"I am passionate about web development and want to build a career in this field. This training program aligns perfectly with my career goals and I believe it will help me gain practical skills needed in the industry.\"\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "add"]
+				}
+			}
+			},
+			{
+			"name": "Update Training Application",
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"{{applicationId}}\",\n  \"phoneNumber\": \"9876543211\",\n  \"reason\": \"I am passionate about web development and want to build a career in this field. This training program aligns perfectly with my career goals and I believe it will help me gain practical skills needed in the industry. I also have some basic knowledge of HTML and CSS.\"\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "update"]
+				}
+			}
+			},
+			{
+			"name": "Get All Training Applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "getAll"]
+				}
+			}
+			},
+			{
+			"name": "Get Application by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/getById/{{applicationId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "getById", "{{applicationId}}"]
+				}
+			}
+			},
+			{
+			"name": "Get Applications by Program ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/program/{{trainingProgramId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "program", "{{trainingProgramId}}"]
+				},
+				"description": "Get all applications for a specific training program"
+			}
+			},
+			{
+			"name": "Get Applications by Status (Pending)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/status/pending",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "status", "pending"]
+				},
+				"description": "Get all pending applications"
+			}
+			},
+			{
+			"name": "Get Applications by Status (Approved)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/status/approved",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "status", "approved"]
+				},
+				"description": "Get all approved applications"
+			}
+			},
+			{
+			"name": "Get Applications by Status (Rejected)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/status/rejected",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "status", "rejected"]
+				},
+				"description": "Get all rejected applications"
+			}
+			},
+			{
+			"name": "Update Application Status",
+			"request": {
+				"method": "POST",
+				"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+				],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"{{applicationId}}\",\n  \"status\": \"approved\"\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/updateStatus",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "updateStatus"]
+				},
+				"description": "Update application status to 'pending', 'approved', or 'rejected'"
+			}
+			},
+			{
+			"name": "Delete Training Application",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+				"raw": "http://localhost:4000/rbscience/training-applications/{{applicationId}}",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "training-applications", "{{applicationId}}"]
+				}
+			}
+			}
+		]
 		}
 	],
 	"event": [
@@ -3616,3 +4184,43 @@
 		}
 	]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

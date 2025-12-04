@@ -125,6 +125,7 @@ const teamMemberStorage = multer.diskStorage({
   }
 });
 
+// Storage configuration for service details
 const serviceDetailStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadPath = path.join(UPLOADS_ROOT, "servicesDetails");
@@ -150,7 +151,7 @@ const eventStorage = multer.diskStorage({
   }
 });
 
-// ✅ NEW: Storage configuration for collaborative projects
+// Storage configuration for collaborative projects
 const collaborativeProjectStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadPath = path.join(UPLOADS_ROOT, "collaborativeProjects");
@@ -159,6 +160,32 @@ const collaborativeProjectStorage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     const prefix = req.body.title || "collaborative-project";
+    cb(null, generateUniqueFilename(file.originalname, prefix));
+  }
+});
+
+// ✅ NEW: Storage configuration for Training Programs
+const trainingProgramStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadPath = path.join(UPLOADS_ROOT, "trainingPrograms");
+    ensureDir(uploadPath);
+    cb(null, uploadPath);
+  },
+  filename: (req, file, cb) => {
+    const prefix = req.body.title || "training-program";
+    cb(null, generateUniqueFilename(file.originalname, prefix));
+  }
+});
+
+// ✅ NEW: Storage configuration for Success Stories
+const successStoryStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadPath = path.join(UPLOADS_ROOT, "successStories");
+    ensureDir(uploadPath);
+    cb(null, uploadPath);
+  },
+  filename: (req, file, cb) => {
+    const prefix = req.body.title || "success-story";
     cb(null, generateUniqueFilename(file.originalname, prefix));
   }
 });
@@ -206,6 +233,12 @@ const uploadTeamMember = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 }).single("image");
 
+// ✅ Service details
+const uploadServiceDetail = multer({
+  storage: serviceDetailStorage,
+  fileFilter: imageFilter,
+  limits: { fileSize: 5 * 1024 * 1024 },
+}).single("image_url");
 
 // ✅ Events: brochure only (PDF, JPG, PNG)
 const uploadEvent = multer({
@@ -216,18 +249,28 @@ const uploadEvent = multer({
   { name: "brochure", maxCount: 1 }
 ]);
 
-// ✅ NEW: Collaborative Projects
+// ✅ Collaborative Projects
 const uploadCollaborativeProject = multer({
   storage: collaborativeProjectStorage,
   fileFilter: imageFilter,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
+  limits: { fileSize: 5 * 1024 * 1024 },
 }).single("image");
 
-const uploadServiceDetail = multer({
-  storage: serviceDetailStorage,
+// ✅ NEW: Training Programs
+const uploadTrainingProgram = multer({
+  storage: trainingProgramStorage,
   fileFilter: imageFilter,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
-}).single("image_url");
+  limits: { fileSize: 5 * 1024 * 1024 },
+}).single("image");
+
+// ✅ NEW: Success Stories
+const uploadSuccessStory = multer({
+  storage: successStoryStorage,
+  fileFilter: imageFilter,
+  limits: { fileSize: 5 * 1024 * 1024 },
+}).single("image");
+
+// ---------------------- Exports ----------------------
 
 module.exports = {
   uploadProductCategories,
@@ -235,9 +278,11 @@ module.exports = {
   uploadBlogCategory,
   uploadBlog,
   uploadTeamMember,
+  uploadServiceDetail,
   uploadEvent,
-  uploadCollaborativeProject, 
-  uploadServiceDetail, 
+  uploadCollaborativeProject,
+  uploadTrainingProgram,
+  uploadSuccessStory,
   UPLOADS_ROOT,
 };
 
@@ -289,69 +334,9 @@ module.exports = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // ============================================
+// // UPDATED upload.js middleware
+// // ============================================
 // const multer = require("multer");
 // const path = require("path");
 // const fs = require("fs");
@@ -362,33 +347,16 @@ module.exports = {
 //   const ext = path.extname(originalName).toLowerCase();
 //   const baseName = prefix.toLowerCase().replace(/[^a-z0-9]/g, "-");
 
-//   // if (index !== null) {
-//   //   const ordinals = [
-//   //     "first",
-//   //     "second",
-//   //     "third",
-//   //     "fourth",
-//   //     "fifth",
-//   //     "sixth",
-//   //     "seventh",
-//   //     "eighth",
-//   //     "ninth",
-//   //     "tenth",
-//   //   ];
-//   //   const ordinal = ordinals[index] || `${index + 1}th`;
-//   //   return `${baseName}_${ordinal}_${randomNum}${ext}`;
-//   // }
-
 //   return `${baseName}_${randomNum}${ext}`;
 // };
 
-// // ✅ Custom image filter: only jpg, jpeg, png
+// // ✅ Custom image filter: only jpg, jpeg, png, webp, gif
 // const imageFilter = (req, file, cb) => {
-//   const allowedExt = [".jpg", ".jpeg", ".png","webp","gif"];
+//   const allowedExt = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
 //   const ext = path.extname(file.originalname).toLowerCase();
 
 //   if (!allowedExt.includes(ext)) {
-//     return cb(new Error("Only .jpg, .jpeg, .png  , webp, and , gif. image formats are allowed!"), false);
+//     return cb(new Error("Only .jpg, .jpeg, .png, .webp, and .gif image formats are allowed!"), false);
 //   }
 //   cb(null, true);
 // };
@@ -411,18 +379,10 @@ module.exports = {
 //   }
 // };
 
-
 // // -------------------- Dynamic Root Path --------------------
-// // Root of project is where server.js is run
 // const PROJECT_ROOT = process.cwd();
-
-// // Upload folder outside project (same level)
-// const UPLOADS_ROOT = path.join(PROJECT_ROOT, "..", "uploads");// for local  for server use this
-// // //const UPLOADS_ROOT = path.join(PROJECT_ROOT, "uploads");// for main server use this 
-
-
-
-
+// const UPLOADS_ROOT = path.join(PROJECT_ROOT, "..", "uploads"); // for local
+// // const UPLOADS_ROOT = path.join(PROJECT_ROOT, "uploads"); // for main server
 
 // // ---------------------- Storages ----------------------
 
@@ -446,12 +406,11 @@ module.exports = {
 // // Storage configuration for products
 // const productStorage = multer.diskStorage({
 //   destination: (req, file, cb) => {
-//  const uploadPath = path.join(UPLOADS_ROOT, "products");
+//     const uploadPath = path.join(UPLOADS_ROOT, "products");
 //     ensureDir(uploadPath);
 //     cb(null, uploadPath);
 //   },
 //   filename: (req, file, cb) => {
-    
 //     const productName = req.body.name || "product";
 //     const files = req.files || [];
 //     const currentIndex = files.indexOf(file);
@@ -472,27 +431,22 @@ module.exports = {
 //   }
 // });
 
-
+// // Storage configuration for blogs
 // const blogStorage = multer.diskStorage({
-
 //   destination: (req, file, cb) => {
-// console.log("File : ",file.fieldname);
-
-//     const uploadPath = file.fieldname=="authorImage"
-//     ? path.join(UPLOADS_ROOT, "blogs","authors")  
-//     : path.join(UPLOADS_ROOT, "blogs");
+//     const uploadPath = file.fieldname === "authorImage"
+//       ? path.join(UPLOADS_ROOT, "blogs", "authors")
+//       : path.join(UPLOADS_ROOT, "blogs");
 //     ensureDir(uploadPath);
 //     cb(null, uploadPath);
 //   },
 //   filename: (req, file, cb) => {
-
-//     const prefix =file.fieldname=="authorImage" ? 
-//      `${req.body.author || "blogs"}_author`
-//     : req.body.name ||"blogs";
+//     const prefix = file.fieldname === "authorImage"
+//       ? `${req.body.author || "blogs"}_author`
+//       : req.body.name || "blogs";
 //     cb(null, generateUniqueFilename(file.originalname, prefix));
 //   }
 // });
-
 
 // // Storage configuration for team members
 // const teamMemberStorage = multer.diskStorage({
@@ -507,6 +461,18 @@ module.exports = {
 //   }
 // });
 
+// const serviceDetailStorage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     const uploadPath = path.join(UPLOADS_ROOT, "servicesDetails");
+//     ensureDir(uploadPath);
+//     cb(null, uploadPath);
+//   },
+//   filename: (req, file, cb) => {
+//     const prefix = req.body.title || "service-detail";
+//     cb(null, generateUniqueFilename(file.originalname, prefix));
+//   }
+// });
+
 // // Storage configuration for events
 // const eventStorage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -516,6 +482,19 @@ module.exports = {
 //   },
 //   filename: (req, file, cb) => {
 //     const prefix = req.body.title || "event";
+//     cb(null, generateUniqueFilename(file.originalname, prefix));
+//   }
+// });
+
+// // ✅ NEW: Storage configuration for collaborative projects
+// const collaborativeProjectStorage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     const uploadPath = path.join(UPLOADS_ROOT, "collaborativeProjects");
+//     ensureDir(uploadPath);
+//     cb(null, uploadPath);
+//   },
+//   filename: (req, file, cb) => {
+//     const prefix = req.body.title || "collaborative-project";
 //     cb(null, generateUniqueFilename(file.originalname, prefix));
 //   }
 // });
@@ -563,6 +542,7 @@ module.exports = {
 //   limits: { fileSize: 5 * 1024 * 1024 },
 // }).single("image");
 
+
 // // ✅ Events: brochure only (PDF, JPG, PNG)
 // const uploadEvent = multer({
 //   storage: eventStorage,
@@ -572,6 +552,19 @@ module.exports = {
 //   { name: "brochure", maxCount: 1 }
 // ]);
 
+// // ✅ NEW: Collaborative Projects
+// const uploadCollaborativeProject = multer({
+//   storage: collaborativeProjectStorage,
+//   fileFilter: imageFilter,
+//   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
+// }).single("image");
+
+// const uploadServiceDetail = multer({
+//   storage: serviceDetailStorage,
+//   fileFilter: imageFilter,
+//   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
+// }).single("image_url");
+
 // module.exports = {
 //   uploadProductCategories,
 //   uploadProduct,
@@ -579,28 +572,7 @@ module.exports = {
 //   uploadBlog,
 //   uploadTeamMember,
 //   uploadEvent,
+//   uploadCollaborativeProject, 
+//   uploadServiceDetail, 
 //   UPLOADS_ROOT,
 // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
