@@ -69,16 +69,16 @@ const update = async (req, res) => {
     const newExperts = body.ourExperts !== undefined ? body.ourExperts : member.ourExperts;
     const newAdvisory = body.ourAdvisory !== undefined ? body.ourAdvisory : member.ourAdvisory;
     
-    if (newExperts && newAdvisory) {
-      if (file) {
-        const tempPath = path.join(UPLOADS_ROOT, "teamMembers", file.filename);
-        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
-      }
-      throw new CustomError(
-        "A team member cannot be both an Expert and an Advisory member",
-        statusCode.BAD_REQUEST
-      );
-    }
+    // if (newExperts && newAdvisory) {
+    //   if (file) {
+    //     const tempPath = path.join(UPLOADS_ROOT, "teamMembers", file.filename);
+    //     if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+    //   }
+    //   throw new CustomError(
+    //     "A team member cannot be both an Expert and an Advisory member",
+    //     statusCode.BAD_REQUEST
+    //   );
+    // }
 
     if (body.role && body.role !== member.role) {
       const conflict = await TeamMembers.findOne({ role: body.role });

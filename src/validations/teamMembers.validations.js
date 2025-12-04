@@ -77,11 +77,11 @@ const updateTeamMember = Joi.object({
     const ourExperts = value.ourExperts === true;
     const ourAdvisory = value.ourAdvisory === true;
     
-    if (ourExperts && ourAdvisory) {
-      return helpers.error("any.invalid", {
-        message: "A team member cannot be both an Expert and an Advisory member"
-      });
-    }
+    // if (ourExperts && ourAdvisory) {
+    //   return helpers.error("any.invalid", {
+    //     message: "A team member cannot be both an Expert and an Advisory member"
+    //   });
+    // } 
     
     if (!ourExperts && !ourAdvisory) {
       return helpers.error("any.invalid", {
