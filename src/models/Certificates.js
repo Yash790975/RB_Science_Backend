@@ -1,26 +1,20 @@
-
-
 // ============================================
-// ServicesDetails.js
+// Certificates.js
 // ============================================
 
 const mongoose = require("mongoose");
 
-const ServicesDetailsSchema = new mongoose.Schema(
+const CertificatesSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, "Service detail title is required"],
+      required: [true, "Certificate title is required"],
       trim: true,
     },
     description: {
       type: String,
+      required: [true, "Certificate description is required"],
       trim: true,
-    },
-    service_category_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "ServiceCategories",
-      required: [true, "Service category ID is required"],
     },
     featured: {
       type: [String],
@@ -28,6 +22,7 @@ const ServicesDetailsSchema = new mongoose.Schema(
     },
     image_url: {
       type: String,
+      required: [true, "Certificate image is required"],
       trim: true,
     },
     long_description: {
@@ -41,22 +36,19 @@ const ServicesDetailsSchema = new mongoose.Schema(
           description: {
             type: String,
             required: true,
-            trim: true, 
+            trim: true,
           },
         },
       ],
       default: [],
-    }, 
+    },
   },
   {
     timestamps: true,
-    collection: "services_details",
+    collection: "certificates",
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }
 );
 
-// Index for service_category_id
-ServicesDetailsSchema.index({ service_category_id: 1 });
-
-module.exports = mongoose.model("ServicesDetails", ServicesDetailsSchema);
+module.exports = mongoose.model("Certificates", CertificatesSchema);

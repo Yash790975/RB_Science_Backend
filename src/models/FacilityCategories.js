@@ -1,11 +1,10 @@
-
 // ============================================
-// ServiceCategories.js
+// FacilityCategories.js
 // ============================================
 
 const mongoose = require("mongoose");
 
-const ServiceCategoriesSchema = new mongoose.Schema(
+const FacilityCategoriesSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -16,10 +15,10 @@ const ServiceCategoriesSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    service_id: {
+    facility_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Services",
-      required: [true, "Service ID is required"],
+      ref: "Facilities",
+      required: [true, "Facility ID is required"],
     },
     is_active: {
       type: Boolean,
@@ -28,17 +27,16 @@ const ServiceCategoriesSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "service_categories",
+    collection: "facility_categories",
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }
 );
 
-// Compound unique index on service_id and title
-ServiceCategoriesSchema.index({ service_id: 1, title: 1 }, { unique: true });
+// Compound unique index on facility_id and title
+FacilityCategoriesSchema.index({ facility_id: 1, title: 1 }, { unique: true });
 
-// Index for service_id
-ServiceCategoriesSchema.index({ service_id: 1 });
+// Index for facility_id
+FacilityCategoriesSchema.index({ facility_id: 1 });
 
-module.exports = mongoose.model("ServiceCategories", ServiceCategoriesSchema);
- 
+module.exports = mongoose.model("FacilityCategories", FacilityCategoriesSchema);

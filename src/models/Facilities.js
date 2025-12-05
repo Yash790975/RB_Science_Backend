@@ -1,14 +1,14 @@
 // ============================================
-// Services.js
+// Facilities.js
 // ============================================
 
 const mongoose = require("mongoose");
 
-const ServicesSchema = new mongoose.Schema(
+const FacilitiesSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, "Service title is required"],
+      required: [true, "Facility title is required"],
       trim: true,
       unique: true,
     },
@@ -19,13 +19,13 @@ const ServicesSchema = new mongoose.Schema(
   },
   {    
     timestamps: true,
-    collection: "services",
+    collection: "facilities",
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }
 ); 
 
 // Index for title
-ServicesSchema.index({ title: 1 }, { unique: true });
+FacilitiesSchema.index({ title: 1 }, { unique: true });
 
-module.exports = mongoose.model("Services", ServicesSchema);
+module.exports = mongoose.model("Facilities", FacilitiesSchema);

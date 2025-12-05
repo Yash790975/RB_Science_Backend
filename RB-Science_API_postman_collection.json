@@ -4137,6 +4137,503 @@
 			}
 			}
 		]
+		},
+		{
+		"name": "Facilities",
+		"item": [
+			{
+			"name": "Add Facility",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('facilityId', pm.response.json().data._id);",
+					"}"
+					]
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"title\": \"Hospital Facilities\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "add"]
+				}
+			}
+			},
+			{
+			"name": "Update Facility",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"67890abcdef1234567890abc\",\n  \"title\": \"Advanced Hospital Facilities\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "update"]
+				}
+			}
+			},
+			{
+			"name": "Get All Facilities",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "getAll"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Facilities",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "getActive"]
+				}
+			}
+			},
+			{
+			"name": "Get Facility By ID",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/getById/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "getById", "67890abcdef1234567890abc"]
+				}
+			}
+			},
+			{
+			"name": "Delete Facility",
+			"request": {
+				"method": "DELETE",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facilities/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facilities", "67890abcdef1234567890abc"]
+				}
+			}
+			}
+		]
+		},
+		{
+		"name": "Facility Categories",
+		"item": [
+			{
+			"name": "Add Facility Category",
+			"event": [
+				{
+				"listen": "test",
+				"script": {
+					"exec": [
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    pm.globals.set('facilityCategoryId', pm.response.json().data._id);",
+					"}"
+					]
+				}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"title\": \"ICU Units\",\n  \"description\": \"Intensive Care Unit facilities with advanced monitoring\",\n  \"facility_id\": \"67890abcdef1234567890abc\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/add",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "add"]
+				}
+			}
+			},
+			{
+			"name": "Update Facility Category",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"67890abcdef1234567890xyz\",\n  \"title\": \"Advanced ICU Units\",\n  \"description\": \"State-of-the-art intensive care facilities\",\n  \"is_active\": true\n}"
+				},
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/update",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "update"]
+				}
+			}
+			},
+			{
+			"name": "Get All Categories",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/getAll",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "getAll"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Categories",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/getActive",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "getActive"]
+				}
+			}
+			},
+			{
+			"name": "Get Category By ID",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/getById/67890abcdef1234567890xyz",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "getById", "67890abcdef1234567890xyz"]
+				}
+			}
+			},
+			{
+			"name": "Get Categories By Facility ID",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/facility/67890abcdef1234567890abc",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "facility", "67890abcdef1234567890abc"]
+				}
+			}
+			},
+			{
+			"name": "Get Active Categories By Facility ID",
+			"request": {
+				"method": "GET",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/facility/67890abcdef1234567890abc/active",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "facility", "67890abcdef1234567890abc", "active"]
+				}
+			}
+			},
+			{
+			"name": "Delete Category",
+			"request": {
+				"method": "DELETE",
+				"url": {
+				"raw": "http://localhost:4000/rbscience/facility-categories/67890abcdef1234567890xyz",
+				"protocol": "http",
+				"host": ["localhost"],
+				"port": "4000",
+				"path": ["rbscience", "facility-categories", "67890abcdef1234567890xyz"]
+				}
+			}
+			}
+		]
+		},
+		{
+		"name": "Facility Details",
+		"item": [
+			{
+			"name": "Add Facility Detail",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "title", "value": "Premium ICU Room", "type": "text"},
+					{"key": "description", "value": "Fully equipped ICU room with advanced monitoring systems", "type": "text"},
+					{"key": "facility_category_id", "value": "67890abcdef1234567890xyz", "type": "text"},
+					{"key": "featured", "value": "[\"24/7 Monitoring\", \"Advanced Equipment\", \"Expert Staff\"]", "type": "text"},
+					{"key": "image_url", "type": "file", "src": "/path/to/image.jpg"},
+					{"key": "long_description", "value": "[{\"label\":\"Features\",\"description\":\"State-of-the-art medical equipment and monitoring systems\"}]", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/facility-details/add"
+			}
+			},
+			{
+			"name": "Update Facility Detail",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "id", "value": "67890abcdef1234567890pqr", "type": "text"},
+					{"key": "title", "value": "Deluxe ICU Room", "type": "text"},
+					{"key": "description", "value": "Premium ICU facility with latest technology", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/facility-details/update"
+			}
+			},
+			{
+			"name": "Get All Facility Details",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/facility-details/getAll"}
+			},
+			{
+			"name": "Get Facility Detail By ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/facility-details/getById/67890abcdef1234567890pqr"}
+			},
+			{
+			"name": "Get Details By Category ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/facility-details/category/67890abcdef1234567890xyz"}
+			},
+			{
+			"name": "Delete Facility Detail",
+			"request": {"method": "DELETE", "url": "http://localhost:4000/rbscience/facility-details/67890abcdef1234567890pqr"}
+			}
+		]
+		},
+		{
+		"name": "Certificates",
+		"item": [
+			{
+			"name": "Add Certificate",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "title", "value": "ISO 9001:2015 Certification", "type": "text"},
+					{"key": "description", "value": "International quality management certification", "type": "text"},
+					{"key": "featured", "value": "[\"Quality Assurance\", \"International Standard\", \"Valid till 2026\"]", "type": "text"},
+					{"key": "image_url", "type": "file", "src": "/path/to/certificate.pdf"},
+					{"key": "long_description", "value": "[{\"label\":\"Scope\",\"description\":\"Covers all quality management processes\"}]", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/certificates/add"
+			}
+			},
+			{
+			"name": "Update Certificate",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "id", "value": "67890abcdef1234567890abc", "type": "text"},
+					{"key": "title", "value": "ISO 9001:2015 Updated", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/certificates/update"
+			}
+			},
+			{
+			"name": "Get All Certificates",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/certificates/getAll"}
+			},
+			{
+			"name": "Get Certificate By ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/certificates/getById/67890abcdef1234567890abc"}
+			},
+			{
+			"name": "Delete Certificate",
+			"request": {"method": "DELETE", "url": "http://localhost:4000/rbscience/certificates/67890abcdef1234567890abc"}
+			}
+		]
+		},
+		{
+		"name": "News Category",
+		"item": [
+			{
+			"name": "Add News Category",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"name\": \"Healthcare Updates\",\n  \"category\": \"Medical News\",\n  \"isActive\": true\n}"
+				},
+				"url": "http://localhost:4000/rbscience/news-category/add"
+			}
+			},
+			{
+			"name": "Update News Category",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+				"mode": "raw",
+				"raw": "{\n  \"id\": \"67890abcdef1234567890abc\",\n  \"name\": \"Healthcare & Medical Updates\",\n  \"isActive\": true\n}"
+				},
+				"url": "http://localhost:4000/rbscience/news-category/update"
+			}
+			},
+			{
+			"name": "Get All News Categories",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news-category/getAll"}
+			},
+			{
+			"name": "Get Active News Categories",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news-category/getActive"}
+			},
+			{
+			"name": "Get News Category By ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news-category/getById/67890abcdef1234567890abc"}
+			},
+			{
+			"name": "Delete News Category",
+			"request": {"method": "DELETE", "url": "http://localhost:4000/rbscience/news-category/67890abcdef1234567890abc"}
+			}
+		]
+		},
+		{
+		"name": "News",
+		"item": [
+			{
+			"name": "Add News",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "name", "value": "New Treatment Available", "type": "text"},
+					{"key": "slug", "value": "new-treatment-available-2024", "type": "text"},
+					{"key": "title", "value": "Revolutionary New Treatment Now Available", "type": "text"},
+					{"key": "excerpt", "value": "Groundbreaking treatment offers new hope for patients", "type": "text"},
+					{"key": "content", "value": "[{\"heading\":\"Introduction\",\"para\":\"Details about the new treatment...\"}]", "type": "text"},
+					{"key": "date", "value": "2024-12-05", "type": "text"},
+					{"key": "publishedAt", "value": "2024-12-05T10:00:00Z", "type": "text"},
+					{"key": "readTime", "value": "5 min read", "type": "text"},
+					{"key": "categoryId", "value": "67890abcdef1234567890abc", "type": "text"},
+					{"key": "image", "type": "file", "src": "/path/to/news-image.jpg"},
+					{"key": "isActive", "value": "true", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/news/add"
+			}
+			},
+			{
+			"name": "Update News",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "id", "value": "67890abcdef1234567890xyz", "type": "text"},
+					{"key": "title", "value": "Updated: Revolutionary Treatment", "type": "text"},
+					{"key": "isActive", "value": "true", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/news/update"
+			}
+			},
+			{
+			"name": "Get All News",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news/getAll"}
+			},
+			{
+			"name": "Get Active News",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news/getActive"}
+			},
+			{
+			"name": "Get News By ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news/getById/67890abcdef1234567890xyz"}
+			},
+			{
+			"name": "Get News By Category ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news/category/67890abcdef1234567890abc"}
+			},
+			{
+			"name": "Get Active News By Category ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/news/category/67890abcdef1234567890abc/active"}
+			},
+			{
+			"name": "Delete News",
+			"request": {"method": "DELETE", "url": "http://localhost:4000/rbscience/news/67890abcdef1234567890xyz"}
+			}
+		]
+		},
+		{
+		"name": "Gallery",
+		"item": [
+			{
+			"name": "Add Gallery Item",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "title", "value": "Hospital Main Entrance", "type": "text"},
+					{"key": "description", "value": "Modern and welcoming entrance to our healthcare facility", "type": "text"},
+					{"key": "image_url", "type": "file", "src": "/path/to/gallery-image.jpg"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/gallery/add"
+			}
+			},
+			{
+			"name": "Update Gallery Item",
+			"request": {
+				"method": "POST",
+				"body": {
+				"mode": "formdata",
+				"formdata": [
+					{"key": "id", "value": "67890abcdef1234567890abc", "type": "text"},
+					{"key": "title", "value": "Updated: Hospital Entrance", "type": "text"},
+					{"key": "description", "value": "Newly renovated entrance area", "type": "text"}
+				]
+				},
+				"url": "http://localhost:4000/rbscience/gallery/update"
+			}
+			},
+			{
+			"name": "Get All Gallery Items",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/gallery/getAll"}
+			},
+			{
+			"name": "Get Gallery Item By ID",
+			"request": {"method": "GET", "url": "http://localhost:4000/rbscience/gallery/getById/67890abcdef1234567890abc"}
+			},
+			{
+			"name": "Delete Gallery Item",
+			"request": {"method": "DELETE", "url": "http://localhost:4000/rbscience/gallery/67890abcdef1234567890abc"}
+			}
+		]
 		}
 	],
 	"event": [

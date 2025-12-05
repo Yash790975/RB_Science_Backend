@@ -30,6 +30,18 @@ const trainingProgramsRoutes = require("./routes/trainingPrograms.routes");
 const successStoriesRoutes = require("./routes/successStories.routes");
 const trainingApplicationsRoutes = require("./routes/trainingApplications.routes");
 
+const facilitiesRoutes=require("./routes/facilities.routes.js");
+const facilityCategoriesRoutes=require("./routes/facilityCategories.routes.js");
+const facilityDetailsRoutes=require("./routes/facilityDetails.routes.js");
+const certificatesRoutes=require("./routes/certificates.routes.js");
+const newsCategoryRoutes=require("./routes/newsCategory.routes.js");
+const newsRoutes=require("./routes/news.routes.js");
+const galleryRoutes=require("./routes/gallery.routes.js");
+
+
+
+
+
 
 
 const app = express();
@@ -87,6 +99,18 @@ app.use('/rbscience/services-details', servicesDetailsRoutes);
 app.use("/rbscience/training-programs", trainingProgramsRoutes);
 app.use("/rbscience/success-stories", successStoriesRoutes);
 app.use("/rbscience/training-applications", trainingApplicationsRoutes);
+
+app.use("/rbscience/facilities",facilitiesRoutes);
+app.use("/rbscience/facility-categories",facilityCategoriesRoutes);
+app.use("/rbscience/facility-details",facilityDetailsRoutes);
+app.use("/rbscience/certificates",certificatesRoutes);
+app.use("/rbscience/news-category",newsCategoryRoutes);
+app.use("/rbscience/news",newsRoutes);
+app.use("/rbscience/gallery",galleryRoutes);
+
+
+
+
 
 
 app.use(notFound);
